@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLAMES - Designed by Maha</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #ff416c,
+                #ff4b2b,
+                #7f00ff
+            );
+
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 420px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.15);
+
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+            color: white;
+        }
+
+        .heart {
+            font-size: 55px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 38px;
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 15px;
+
+            margin: 8px 0;
+
+            border: none;
+            outline: none;
+
+            border-radius: 12px;
+
+            font-size: 16px;
+
+            background: rgba(255,255,255,0.9);
+        }
+
+        button {
+            width: 100%;
+
+            margin-top: 18px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            color: #ff416c;
+
+            background: white;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 25px;
+
+            font-size: 24px;
+
+            font-weight: bold;
+        }
+
+        .designer {
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            opacity: 0.8;
+        }
+      /* POPUP */
+
+.popup {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.popup-box {
+    width: 85%;
+    max-width: 350px;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+
+    animation: popupShow 0.5s ease;
+}
+
+@keyframes popupShow {
+
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.popup-heart {
+    font-size: 60px;
+
+    animation: popupHeart 1s infinite;
+}
+
+@keyframes popupHeart {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.popup-box h2 {
+    color: #ff416c;
+
+    margin-bottom: 15px;
+}
+
+#popupResult {
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+
+    color: #7f00ff;
+}
+
+.popup-box button {
+    background: linear-gradient(
+        135deg,
+        #ff416c,
+        #7f00ff
+    );
+
+    color: white;
+
+    margin-top: 10px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">❤️</div>
+
+        <h1>FLAMES</h1>
+
+        <div class="subtitle">
+            Discover your relationship ✨
+        </div>
+
+        <input
+            type="text"
+            id="name1"
+            placeholder="Enter first name"
+        >
+
+        <input
+            type="text"
+            id="name2"
+            placeholder="Enter second name"
+        >
+
+        <button onclick="calculateFlames()">
+            🔥 Calculate FLAMES
+        </button>
+
+        <div id="result"></div>
+      <div id="popup" class="popup">
+
+    <div class="popup-box">
+
+        <div class="popup-heart">💖</div>
+
+        <h2>Your FLAMES Result</h2>
+
+        <div id="popupResult"></div>
+
+        <button onclick="closePopup()">
+            ✨ Try Again
+        </button>
+
+    </div>
+
+      </div>
+
+        <div class="designer">
+            ✨ Designed by Maha ✨
+        </div>
+
+    </div>
+
+    <script>
+
+        function calculateFlames() {
+
+            let name1 = document
+                .getElementById("name1")
+                .value
+                .toLowerCase()
+                .replace(/\s/g, "");
+
+            let name2 = document
+                .getElementById("name2")
+                .value
+                .toLowerCase()
+                .replace(/\s/g, "");
+
+            if (name1 === "" || name2 === "") {
+
+                document.getElementById("result").innerHTML =
+                    "❤️ Please enter both names";
+
+                return;
+            }
+function closePopup() {
+
+    document.getElementById("popup").style.display =
+        "none";
+
+    document.getElementById("name1").value = "";
+    document.getElementById("name2").value = "";
+
+    document.getElementById("result").innerHTML = "";
+}
+            let a = name1.split("");
+            let b = name2.split("");
+
+            for (let i = a.length - 1; i >= 0; i--) {
+
+                let index = b.indexOf(a[i]);
+
+                if (index !== -1) {
+
+                    a.splice(i, 1);
+                    b.splice(index, 1);
+
+                }
+            }
+
+            let count = a.length + b.length;
+
+            let flames = [
+                "F",
+                "L",
+                "A",
+                "M",
+                "E",
+                "S"
+            ];
+
+            let index = 0;
+
+            while (flames.length > 1) {
+
+                index =
+                    (index + count - 1)
+                    % flames.length;
+
+                flames.splice(index, 1);
+            }
+
+            let meanings = {
+
+                F: "🤝 Friends",
+
+                L: "❤️ Love",
+
+                A: "💕 Affection",
+
+                M: "💍 Marriage",
+
+                E: "😈 Enemies",
+
+                S: "👨‍👩‍👧 Siblings"
+            };
+
+            let finalResult = meanings[flames[0]];
+
+document.getElementById("result").innerHTML =
+    finalResult;
+
+document.getElementById("popupResult").innerHTML =
+    finalResult;
+
+document.getElementById("popup").style.display =
+    "flex";           
+        }
+
+    </script>
+
+</body>
+</html>
