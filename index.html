@@ -1,399 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>FLAMES - Designed by Maha</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: linear-gradient(
-                135deg,
-                #ff416c,
-                #ff4b2b,
-                #7f00ff
-            );
-
-            overflow: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 420px;
-
-            padding: 35px 25px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.15);
-
-            border: 1px solid rgba(255, 255, 255, 0.3);
-
-            border-radius: 25px;
-
-            backdrop-filter: blur(15px);
-
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-
-            color: white;
-        }
-
-        .heart {
-            font-size: 55px;
-            animation: heartbeat 1.2s infinite;
-        }
-
-        @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.15);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        h1 {
-            margin: 10px 0;
-            font-size: 38px;
-        }
-
-        .subtitle {
-            opacity: 0.9;
-            margin-bottom: 25px;
-        }
-
-        input {
-            width: 100%;
-
-            padding: 15px;
-
-            margin: 8px 0;
-
-            border: none;
-            outline: none;
-
-            border-radius: 12px;
-
-            font-size: 16px;
-
-            background: rgba(255,255,255,0.9);
-        }
-
-        button {
-            width: 100%;
-
-            margin-top: 18px;
-
-            padding: 15px;
-
-            border: none;
-
-            border-radius: 12px;
-
-            font-size: 17px;
-
-            font-weight: bold;
-
-            color: #ff416c;
-
-            background: white;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-
-        #result {
-            margin-top: 25px;
-
-            font-size: 24px;
-
-            font-weight: bold;
-        }
-
-        .designer {
-            margin-top: 25px;
-
-            font-size: 13px;
-
-            opacity: 0.8;
-        }
-      /* POPUP */
-
-.popup {
-    display: none;
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.65);
-
-    justify-content: center;
-    align-items: center;
-
-    z-index: 1000;
-}
-
-.popup-box {
-    width: 85%;
-    max-width: 350px;
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    background: white;
-
-    border-radius: 25px;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-
-    animation: popupShow 0.5s ease;
-}
-
-@keyframes popupShow {
-
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.popup-heart {
-    font-size: 60px;
-
-    animation: popupHeart 1s infinite;
-}
-
-@keyframes popupHeart {
-
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.popup-box h2 {
-    color: #ff416c;
-
-    margin-bottom: 15px;
-}
-
-#popupResult {
-    font-size: 28px;
-
-    font-weight: bold;
-
-    margin: 20px 0;
-
-    color: #7f00ff;
-}
-
-.popup-box button {
-    background: linear-gradient(
-        135deg,
-        #ff416c,
-        #7f00ff
-    );
-
-    color: white;
-
-    margin-top: 10px;
-}
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07110e">
+<meta name="description" content="Learn basic C programming with simple examples and downloadable C source files.">
+<title>Maha C Program | Learn • Practice • Grow</title>
+<style>
+:root{--bg:#050b09;--panel:#091713;--panel2:#0b2019;--green:#19f5a1;--green2:#00c982;--text:#eefcf6;--muted:#a9c7bb;--border:#145a43}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#09271c 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#06100df2;backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:72px}.brand{font-weight:850;font-size:1.25rem;letter-spacing:.2px}.brand span,.logo{color:var(--green)}.tag{font-size:.75rem;color:var(--muted);display:block;margin-top:-5px}.navlinks{display:flex;gap:20px;color:var(--muted);font-size:.94rem}.navlinks a:hover{color:var(--green)}
+.hero{padding:64px 0 56px;border-bottom:1px solid var(--border);background:linear-gradient(110deg,#06110d 30%,#071c14 100%)}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}.eyebrow{color:var(--green);font-weight:750;text-transform:uppercase;letter-spacing:2px;font-size:.8rem}h1{font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.06;margin:10px 0 18px}h1 span{color:var(--green)}.hero p{color:var(--muted);max-width:570px;font-size:1.06rem}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:11px 17px;border-radius:10px;border:1px solid var(--green2);font-weight:750;cursor:pointer;background:transparent;color:var(--text);font-size:.94rem}.btn.primary{background:var(--green);color:#032016;border-color:var(--green)}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.terminal{border:1px solid var(--green2);border-radius:16px;padding:20px;background:#020806;box-shadow:0 0 35px #00c9821c;transform:rotate(1deg)}.term-top{color:var(--muted);font-size:.8rem;border-bottom:1px solid #163d30;padding-bottom:10px;margin-bottom:15px}.dots{color:var(--green);letter-spacing:5px}.terminal pre{white-space:pre-wrap;color:#6fffc6;font: .92rem/1.9 ui-monospace,SFMono-Regular,Consolas,monospace;margin:0}.section{padding:45px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section h2{font-size:clamp(1.7rem,4vw,2.2rem);margin:0}.sub{color:var(--muted);margin:5px 0 0}.search{width:min(320px,100%);padding:12px 14px;background:#06110d;color:var(--text);border:1px solid var(--border);border-radius:10px;font:inherit}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.card{border:1px solid var(--border);border-radius:13px;padding:17px;background:linear-gradient(145deg,#091712,#06100d);display:flex;flex-direction:column;min-height:220px;transition:.2s}.card:hover{border-color:var(--green2);transform:translateY(-3px)}.card .num{color:var(--green);font-size:.8rem;font-weight:800}.card h3{margin:6px 0;font-size:1.05rem}.card p{color:var(--muted);font-size:.9rem;margin:0 0 14px;flex:1}.pill{align-self:flex-start;color:#032016;background:var(--green);font-size:.72rem;font-weight:850;border-radius:20px;padding:3px 10px;margin-bottom:13px}.download{width:100%;padding:10px;border-radius:8px;background:var(--green);color:#032016;font-weight:800;border:0;cursor:pointer}.download:hover{background:#72ffca}.example{border:1px solid var(--green2);border-radius:14px;padding:20px;margin-top:28px;background:#06120e}.example-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:18px}.codebox{background:#020806;border:1px solid #174c38;border-radius:10px;overflow:hidden}.codebar{padding:9px 13px;color:var(--muted);border-bottom:1px solid #174c38;font-size:.85rem;display:flex;justify-content:space-between;gap:12px}.codebar button{background:transparent;border:1px solid var(--border);color:var(--green);border-radius:6px;padding:4px 9px;cursor:pointer}.codebox pre{padding:15px;margin:0;overflow:auto;color:#8fffd0;font: .9rem/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}.file-info{padding:15px;border:1px solid #174c38;border-radius:10px;display:flex;flex-direction:column;gap:12px}.file-info small{color:var(--muted)}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{border:1px solid var(--border);border-radius:12px;padding:15px;background:#07140f}.step b{display:flex;align-items:center;justify-content:center;width:31px;height:31px;background:var(--green);color:#032016;border-radius:50%;margin-bottom:12px}.step h3{font-size:.98rem;margin:0 0 7px}.step p{color:var(--muted);font-size:.84rem;margin:0}.step a{color:var(--green);text-decoration:underline}.tips{margin-top:16px;padding:18px;border:1px solid var(--border);border-radius:12px;color:var(--muted)}footer{border-top:1px solid var(--border);padding:22px 0;color:var(--muted);font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.foot strong{color:var(--green)}.empty{color:var(--muted);padding:20px;display:none}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr}.terminal{transform:none}.example-grid{grid-template-columns:1fr}.navlinks{gap:12px}}
+@media(max-width:560px){.nav{align-items:flex-start;padding:12px 0;flex-direction:column}.navlinks{width:100%;justify-content:space-between;font-size:.84rem}.hero{padding:42px 0}.section-head{align-items:stretch;flex-direction:column}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.card{min-height:190px}}
+</style>
 </head>
-
 <body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span class="logo">〈/〉</span> Maha <span>C Program</span><small class="tag">Learn • Practice • Grow</small></a>
+<nav class="navlinks"><a href="#">Home</a><a href="#programs">Programs</a><a href="#about">About</a><a href="#deploy">Deploy</a></nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+<div><div class="eyebrow">Your coding journey starts here</div><h1>Welcome to<br><span>Maha C Program</span></h1><p>Learn C programming with simple examples and downloadable source code files. Start small, practice often, and grow your coding skills.</p><div class="actions"><a class="btn primary" href="#programs">⌘ Explore Programs</a><button class="btn" id="downloadAll">↓ Download All (.zip)</button></div></div>
+<div class="terminal"><div class="term-top"><span class="dots">● ● ●</span> &nbsp; hello.c</div><pre>#include &lt;stdio.h&gt;
 
-    <div class="container">
-
-        <div class="heart">❤️</div>
-
-        <h1>FLAMES</h1>
-
-        <div class="subtitle">
-            Discover your relationship ✨
-        </div>
-
-        <input
-            type="text"
-            id="name1"
-            placeholder="Enter first name"
-        >
-
-        <input
-            type="text"
-            id="name2"
-            placeholder="Enter second name"
-        >
-
-        <button onclick="calculateFlames()">
-            🔥 Calculate FLAMES
-        </button>
-
-        <div id="result"></div>
-      <div id="popup" class="popup">
-
-    <div class="popup-box">
-
-        <div class="popup-heart">💖</div>
-
-        <h2>Your FLAMES Result</h2>
-
-        <div id="popupResult"></div>
-
-        <button onclick="closePopup()">
-            ✨ Try Again
-        </button>
-
-    </div>
-
-      </div>
-
-        <div class="designer">
-            ✨ Designed by Maha ✨
-        </div>
-
-    </div>
-
-    <script>
-
-        function calculateFlames() {
-
-            let name1 = document
-                .getElementById("name1")
-                .value
-                .toLowerCase()
-                .replace(/\s/g, "");
-
-            let name2 = document
-                .getElementById("name2")
-                .value
-                .toLowerCase()
-                .replace(/\s/g, "");
-
-            if (name1 === "" || name2 === "") {
-
-                document.getElementById("result").innerHTML =
-                    "❤️ Please enter both names";
-
-                return;
-            }
-function closePopup() {
-
-    
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("name1").value = "";
-    document.getElementById("name2").value = "";
-    document.getElementById("result").innerHTML = "";
-}
-
-}
-            let a = name1.split("");
-            let b = name2.split("");
-
-            for (let i = a.length - 1; i >= 0; i--) {
-
-                let index = b.indexOf(a[i]);
-
-                if (index !== -1) {
-
-                    a.splice(i, 1);
-                    b.splice(index, 1);
-
-                }
-            }
-
-            let count = a.length + b.length;
-
-            let flames = [
-                "F",
-                "L",
-                "A",
-                "M",
-                "E",
-                "S"
-            ];
-
-            let index = 0;
-
-            while (flames.length > 1) {
-
-                index =
-                    (index + count - 1)
-                    % flames.length;
-
-                flames.splice(index, 1);
-            }
-
-            let meanings = {
-
-                F: "🤝 Friends",
-
-                L: "❤️ Love",
-
-                A: "💕 Affection",
-
-                M: "💍 Marriage",
-
-                E: "😈 Enemies",
-
-                S: "👨‍👩‍👧 Siblings"
-            };
-
-            let finalResult = meanings[flames[0]];
-
-document.getElementById("result").innerHTML =
-    finalResult;
-
-document.getElementById("popupResult").innerHTML =
-    finalResult;
-
-document.getElementById("popup").style.display =
-    "flex";           
-        }
-
-    </script>
-
-</body>
-</html>
+int main(void) {
+    printf("Hello, World!\\n");
+    return 0;
+}</pre></div>
+</div></section>
+<section class="section wrap" id="programs">
+<div class="section-head"><div><h2><span class="logo">〈/〉</span> Basic C Programs</h2><p class="sub">Choose a program and download its .c source file.</p></div><input class="search" id="search" type="search" placeholder="⌕ Search programs..." aria-label="Search programs"></div>
+<div class="cards" id="cards"></div><div class="empty" id="empty">No programs found. Try another search.</div>
+<div class="example" id="about"><h2 style="font-size:1.2rem;margin:0 0 14px">▤ Example Program — Hello World</h2><div class="example-grid"><div class="codebox"><div class="codebar"><span>hello.c</span><button id="copyHello">Copy code</button></div><pre id="helloCode"></pre></div><div class="file-info"><div><small>File name</small><br><strong>hello.c</strong></div><div><small>File type</small><br><strong>C source code</strong></div><div><small>What it does</small><br><strong>Prints “Hello, World!”</strong></div><button class="download" data-download="hello.c">↓ Download hello.c</button></div></div></div>
+</section>
+<section class="section wrap" id="deploy"><div class="section-head"><div><h2>🚀 Publish your website on Vercel</h2><p class="sub">Follow these steps to make Maha C Program live.</p></div></div>
+<div class="steps">
+<div class="step"><b>1</b><h3>Prepare the files</h3><p>Download this project ZIP and extract it. Keep <code>index.html</code> and the <code>programs</code> folder together.</p></div>
+<div class="step"><b>2</b><h3>Upload to GitHub</h3><p>Create a repository at <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a> and upload all extracted files.</p></div>
+<div class="step"><b>3</b><h3>Import in Vercel</h3><p>Open <a href="https://vercel.com/new" target="_blank" rel="noreferrer">Vercel New Project</a>, sign in with GitHub, and import your repository.</p></div>
+<div class="step"><b>4</b><h3>Deploy</h3><p>For this static website, the default settings are usually enough. Click <strong>Deploy</strong>.</p></div>
+<div class="step"><b>5</b><h3>Open your link</h3><p>When deployment finishes, open the generated <code>.vercel.app</code> link. You can rename the project in Vercel settings if the name is available.</p></div>
+</div>
+<div class="tips"><strong style="color:var(--green)">Quick tips</strong><ul><li>Make sure <code>index.html</code> is in the project root.</li><li>Each download saves an individual C source file.</li><li>To update the site, upload your changes to GitHub; Vercel can redeploy automatically.</li><li>A download file is source code; to run it, compile it with a C compiler.</li></ul></div>
+</section>
+</main>
+<footer><div class="wrap foot"><strong>〈/〉 Maha C Program</strong><span>C Programming • Simple • Practical • Downloadable</span><span>Design by Maha ♥</span></div></footer>
+<script>
+const programs = [
+ {file:"hello.c",name:"Hello World",desc:"Print your first message in C.",code:'#include <stdio.h>\\n\\nint main(void) {\\n    printf("Hello, World!\\\\n");\\n    return 0;\\n}'},
+ {file:"variables.c",name:"Variables & Data Types",desc:"Learn int, float, char and printf.",code:'#include <stdio.h>\\n\\nint main(void) {\\n    int age = 18;\\n    float marks = 85.5f;\\n    char grade = \\'A\\';\\n    printf("Age: %d\\\\n", age);\\n    printf("Marks: %.1f\\\\n", marks);\\n    printf("Grade: %c\\\\n", grade);\\n    return 0;\\n}'},
+ {file:"if_else.c",name:"If - Else",desc:"Make decisions using a condition.",code:'#include <stdio.h>\\n\\nint main(void) {\\n    int number;\\n    printf("Enter an integer: ");\\n    if (scanf("%d", &number) != 1) return 1;\\n    if (number % 2 == 0) printf("Even\\\\n");\\n    else printf("Odd\\\\n");\\n    return 0;\\n}'},
+ {file:"switch_case.c",name:"Switch Case",desc:"Choose between multiple options.",code:'#include <stdio.h>\\n\\nint main(void) {\\n    int choice = 1;\\n    switch (choice) {\\n        case 1: printf("Hello\\\\n"); break;\\n        case 2: printf("Goodbye\\\\n"); break;\\n        default: printf("Invalid choice\\\\n");\\n    }\\n    return 0;\\n}'},
+ {file:"loops.c",name:"Loops",desc:"Repeat tasks with a for loop.",code:'#include <stdio.h>\\n\\nint main(void) {\\n    for (int i = 1; i <= 5; i++) {\\n        printf("%d\\\\n", i);\\n    }\\n    return 0;\\n}'},
+ {file:"arrays.c",name:"Arrays",desc:"Store several values in one array.",code:'#include <stdio.h>\\n\\nint main(void) {\\n    int nums[] = {10, 20, 30, 40, 50};\\n    for (int i = 0; i < 5; i++) {\\n        printf("%d\\\\n", nums[i]);\\n    }\\n    return 0;\\n}'},
+ {file:"functions.c",name:"Functions",desc:"Create and call a simple function.",code:'#include <stdio.h>\\n\\nint add(int a, int b) { return a + b; }\\n\\nint main(void) {\\n    printf("%d\\\\n", add(5, 3));\\n    return 0;\\n}'},
+ {file:"pointers.c",name:"Pointers (Intro)",desc:"Learn addresses and pointer values.",code:'#include <stdio.h>\\n\\nint main(void) {\\n    int number = 25;\\n    int *ptr = &number;\\n    printf("Value: %d\\\\n", *ptr);\\n    return 0;\\n}'}
+];
+function downloadFile(file, text){const blob=new Blob([text],{type:"text/x-c"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=file;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+function downloadByFile(file){const p=programs.find(x=>x.file===file);if(p)downloadFile(p.file,p.code.replace(/\\n/g,"\n").replace(/\\'/g,"'"))}
+function render(list){const cards=document.getElementById("cards");cards.innerHTML="";document.getElementById("empty").style.display=list.length?"none":"block";list.forEach((p,i)=>{const article=document.createElement("article");article.className="card";const n=document.createElement("div");n.className="num";n.textContent=String(i+1).padStart(2,"0")+" / BASIC";const h=document.createElement("h3");h.textContent=p.name;const d=document.createElement("p");d.textContent=p.desc;const pill=document.createElement("span");pill.className="pill";pill.textContent="Beginner";const b=document.createElement("button");b.className="download";b.textContent="↓ Download ("+p.file+")";b.addEventListener("click",()=>downloadByFile(p.file));article.append(n,h,d,pill,b);cards.appendChild(article)})}
+render(programs);
+document.getElementById("search").addEventListener("input",e=>{const q=e.target.value.toLowerCase();render(programs.filter(p=>(p.name+" "+p.desc+" "+p.file).toLowerCase().includes(q)))});
+document.getElementById("helloCode").textContent=programs[0].code.replace(/\\n/g,"\n");
+document.getElementById("copyHello").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(programs[0].code.replace(/\\n/g,"\n"));document.getElementById("copyHello").textContent="Copied!";}catch(e){document.getElementById("copyHello").textContent="Select code to copy";}});
+document.querySelectorAll("[data-download]").forEach(b=>b.addEventListener("click",()=>downloadByFile(b.dataset.download)));
+document.getElementById("downloadAll").addEventListener("click",()=>{alert("To download all files together, download the Maha C Program project ZIP from the ChatGPT message. Individual .c downloads are available on this website.");});
+</script>
+</body></html>
